@@ -28,10 +28,10 @@ public class DeliveryCardTest {
         $("[data-test-id=agreement]").click();
 
         $$("button").find(Condition.exactText("Забронировать")).click();
-        $(withText("Успешно!")).shouldBe(Condition.hidden, Duration.ofSeconds(100));
-        $(withText("Встреча успешно забронирована")).shouldBe(Condition.hidden, Duration.ofSeconds(100));
+        $(withText("Успешно!")).shouldBe(Condition.hidden, Duration.ofSeconds(15));
+        $(withText("Встреча успешно забронирована")).shouldBe(Condition.hidden, Duration.ofSeconds(15));
 
-        $("[data-test-id=notification]").shouldBe(Condition.visible, Duration.ofSeconds(100));
-        $("[data-test-id=notification]").shouldHave(Condition.text("Успешно!\n" + "Встреча успешно забронирована на " + dateGenerate(5, "dd.MM.yyyy"))).shouldBe(Condition.visible);
+        $("[data-test-id=notification]").shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification]").shouldHave(Condition.text("Успешно!\n" + "Встреча успешно забронирована на " + dateGenerate(3, "dd.MM.yyyy"))).shouldBe(Condition.visible);
     }
 }
