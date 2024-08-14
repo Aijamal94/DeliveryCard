@@ -22,7 +22,7 @@ public class DeliveryCardTest {
 
         $("[data-test-id='city'] input").setValue("Москва");
         $("[data-test-id=date] input").doubleClick();
-        $("[data-test-id='date'] input").sendKeys(dateGenerate(3, "dd.MM.yyyy"));
+        $("[data-test-id='date'] input").sendKeys(dateGenerate(5, "dd.MM.yyyy"));
         $("[data-test-id='name'] input").setValue("Шаршенова Айжамал");
         $("[data-test-id='phone'] input").setValue("+79261111111");
         $("[data-test-id=agreement]").click();
@@ -32,6 +32,6 @@ public class DeliveryCardTest {
         $(withText("Встреча успешно забронирована")).shouldBe(Condition.hidden, Duration.ofSeconds(15));
 
         $("[data-test-id=notification]").shouldBe(Condition.visible, Duration.ofSeconds(15));
-        $("[data-test-id=notification]").shouldHave(Condition.text("Успешно!\n" + "Встреча успешно забронирована на " + dateGenerate(3, "dd.MM.yyyy"))).shouldBe(Condition.visible);
+        $("[data-test-id=notification]").shouldHave(Condition.text("Успешно!\n" + "Встреча успешно забронирована на " + dateGenerate(5, "dd.MM.yyyy"))).shouldBe(Condition.visible);
     }
 }
